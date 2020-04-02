@@ -2,6 +2,8 @@
 
 echo "Sorting Arithmetic Computation"
 declare -A computeResults
+declare -a resultsInArray
+
 function addAndMultiplyNum() {
 	a=$1 b=$2 c=$3
 	echo $(($a + $b * $c))
@@ -23,5 +25,6 @@ computeResults["addAndMultiply"]=$( addAndMultiplyNum $a $b $c )
 computeResults["multiplyAndAdd"]=$( multiplyAndAddNum $a $b $c )
 computeResults["addAndDivide"]=$( addAndDivideNum $a $b $c )
 computeResults["modAndAdd"]=$( modAndAddNum $a $b $c )
-echo ${computeResults[@]}
-echo ${!computeResults[@]}
+#reading values from dictionary into Array
+resultsInArray=${computeResults[@]}
+echo ${resultsInArray[@]}
