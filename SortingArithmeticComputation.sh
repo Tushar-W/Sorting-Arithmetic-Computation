@@ -1,24 +1,27 @@
 #!/bin/bash -x
 
 echo "Sorting Arithmetic Computation"
+declare -A computeResults
 function addAndMultiplyNum() {
 	a=$1 b=$2 c=$3
-	echo result=$(($a + $b * $c))
+	echo $(($a + $b * $c))
 }
 function multiplyAndAddNum() {
 	a=$1 b=$2 c=$3
-	echo result=$(($a * $b + $c))
+	echo $(($a * $b + $c))
 }
 function addAndDivideNum() {
 	a=$1 b=$2 c=$3
-	echo result=$(($c + $a / $b))
+	echo $(($c + $a / $b))
 }
 function modAndAddNum() {
 	a=$1 b=$2 c=$3
-	echo result=$(($a % $b + $c))
+	echo $(($a % $b + $c))
 }
 read -p "Enters Three Numbers:" a b c
-echo result=$( addAndMultiplyNum $a $b $c )
-echo result=$( multiplyAndAddNum $a $b $c )
-echo result=$( addAndDivideNum $a $b $c )
-echo result=$( modAndAddNum $a $b $c )
+computeResults["addAndMultiply"]=$( addAndMultiplyNum $a $b $c )
+computeResults["multiplyAndAdd"]=$( multiplyAndAddNum $a $b $c )
+computeResults["addAndDivide"]=$( addAndDivideNum $a $b $c )
+computeResults["modAndAdd"]=$( modAndAddNum $a $b $c )
+echo ${computeResults[@]}
+echo ${!computeResults[@]}
