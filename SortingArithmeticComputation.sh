@@ -13,7 +13,12 @@ function addAndDivideNum() {
 	a=$1 b=$2 c=$3
 	echo result=$(($c + $a / $b))
 }
+function modAndAddNum() {
+	a=$1 b=$2 c=$3
+	echo result=$(($a % $b + $c))
+}
 read -p "Enters Three Numbers:" a b c
 echo result=$( addAndMultiplyNum $a $b $c )
 echo result=$( multiplyAndAddNum $a $b $c )
 echo result=$( addAndDivideNum $a $b $c )
+echo result=$( modAndAddNum $a $b $c )
