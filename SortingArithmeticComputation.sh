@@ -9,7 +9,11 @@ function multiplyAndAddNum() {
 	a=$1 b=$2 c=$3
 	echo result=$(($a * $b + $c))
 }
+function addAndDivideNum() {
+	a=$1 b=$2 c=$3
+	echo result=$(($c + $a / $b))
+}
 read -p "Enters Three Numbers:" a b c
 echo result=$( addAndMultiplyNum $a $b $c )
 echo result=$( multiplyAndAddNum $a $b $c )
-
+echo result=$( addAndDivideNum $a $b $c )
