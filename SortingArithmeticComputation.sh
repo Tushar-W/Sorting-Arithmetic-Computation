@@ -20,6 +20,20 @@ function modAndAddNum() {
 	a=$1 b=$2 c=$3
 	echo $(($a % $b + $c))
 }
+function sortDescendingOrder() {
+	for (( count=0; count<4; ++count ))
+	do
+		for (( j=$((count+1)); j<4; ++j))
+		do
+			if [ ${resultsInArray[count]} -lt ${resultsInArray[j]} ];
+			then
+				temp=${resultsInArray[count]}
+				resultsInArray[count]=${resultsInArray[j]}
+				resultsInArray[j]=$temp
+			fi
+		done
+	done
+}
 read -p "Enters Three Numbers:" a b c
 computeResults["addAndMultiply"]=$( addAndMultiplyNum $a $b $c )
 computeResults["multiplyAndAdd"]=$( multiplyAndAddNum $a $b $c )
@@ -30,5 +44,7 @@ resultsInArray[0]=${computeResults["addAndMultiply"]}
 resultsInArray[1]=${computeResults["multiplyAndAdd"]}
 resultsInArray[2]=${computeResults["addAndDivide"]}
 resultsInArray[3]=${computeResults["modAndAdd"]}
+# sorting values of array in descending order
+sortDescendingOrder
 echo ${resultsInArray[@]}
 echo ${!resultsInArray[@]}
