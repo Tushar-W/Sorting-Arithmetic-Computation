@@ -1,10 +1,12 @@
 #!/bin/bash -x
 
 echo "Sorting Arithmetic Computation"
-#read -p "Enter Three Numbers:" a b c
 
-echo "Enter Three Numbers:"
-read a
-read b
-read c
-echo $a $b $c
+function addAndMultiplyNum() {
+	a=$1	b=$2 c=$3
+	result=$(($a + $b * $c))
+	echo $result
+}
+read -p "Enters Three Numbers:" a b c
+echo result=$( addAndMultiplyNum $a $b $c )
+
