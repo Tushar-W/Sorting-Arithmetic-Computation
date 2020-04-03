@@ -78,14 +78,16 @@ function storeValuesInArray() {
 
 read -p "Enters Three Numbers:" a b c
 #store all results in dictionary
-storeResultsInDictioanry
+storeResultsInDictionary
+echo ${computeResults[@]}
+echo ${!computeResults[@]}
 #store values in Array from dictionary
 storeValuesInArray
-# sorting values of array in Descending order
+echo ${resultsInArray[@]}
+echo ${!resultsInArray[@]}
+#shows all computation in descending order by sorting array
 sortDescendingOrder
 echo ${resultsInArray[@]}
-echo ${!resultsInArray[@]}
-# sorting values of array in Ascending order
+#shows all computation in ascending order by sorting array
 sortAscendingOrder
 echo ${resultsInArray[@]}
-echo ${!resultsInArray[@]}
