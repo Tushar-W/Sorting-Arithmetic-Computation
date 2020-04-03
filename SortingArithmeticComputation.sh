@@ -91,3 +91,4 @@ echo ${resultsInArray[@]}
 #shows all computation in ascending order by sorting array
 sortAscendingOrder
 echo ${resultsInArray[@]}
+
